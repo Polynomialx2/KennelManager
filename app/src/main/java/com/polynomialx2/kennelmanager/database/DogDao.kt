@@ -17,5 +17,5 @@ interface DogDao {
             "LEFT JOIN Owner " +
             "ON Dog.OwnerID = Owner.OwnerID " +
             "ORDER BY Attributes.Name ASC")
-    fun getAllDogs(): Array<Dog>
+    fun getAllDogs(): Array<DogWithBreedAndOwner>
 }
