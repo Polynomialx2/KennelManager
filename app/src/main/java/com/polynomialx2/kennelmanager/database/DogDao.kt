@@ -1,5 +1,6 @@
 package com.polynomialx2.kennelmanager.database
 
+import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.Query
 
@@ -17,5 +18,5 @@ interface DogDao {
             "LEFT JOIN Owner " +
             "ON Dog.OwnerID = Owner.OwnerID " +
             "ORDER BY Attributes.Name ASC")
-    fun getAllDogs(): Array<DogWithBreedAndOwner>
+    fun getAllDogs(): LiveData<Array<DogWithBreedAndOwner>>
 }
