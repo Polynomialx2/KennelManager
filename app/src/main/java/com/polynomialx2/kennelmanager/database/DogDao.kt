@@ -18,5 +18,8 @@ interface DogDao {
             "LEFT JOIN Owner " +
             "ON Dog.OwnerID = Owner.OwnerID " +
             "ORDER BY Attributes.Name ASC")
-    fun getAllDogs(): LiveData<Array<DogWithBreedAndOwner>>
+    fun getAllDogData(): LiveData<Array<DogWithBreedAndOwner>>
+
+    @Query("SELECT * FROM Dog ORDER BY Name ASC")
+    fun getAllDogs(): LiveData<Array<Dog>>
 }
